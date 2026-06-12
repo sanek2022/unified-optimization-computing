@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: "Unified Cold-Start Optimization Model"
+authors:
+  - family-names: "Nekkala"
+    given-names: "Sandeep"
+  - family-names: "Dash"
+    given-names: "Sandeep Kumar"
+  - family-names: "Raj"
+    given-names: "Vinay"
+year: 2026
