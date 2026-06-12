@@ -1,33 +1,55 @@
 from models.transformer import WorkloadPredictor
 from models.rl_agent import RLAgent
-from optimization.ucsom import compute_reward
+from utils.data_loader import get_workload_data
+from utils.environment import simulate_environment
+from utils.metrics import compute_reward
+from config import *
 
 def main():
+
     predictor = WorkloadPredictor()
     agent = RLAgent()
 
-    state = None
+    print("🚀 Starting Unified Cold-Start Optimization Simulation...\n")
 
-    for t in range(100):
+    total_reward = 0
+
+    memory = DEFAULT_MEMORY
+    P_cold = 0
+
+    for t in range(1, 50):
+
+        # Step 1: Load workload
         workload = get_workload_data(t)
 
-        # Step 1: Predict workload
+        # Step 2: Predict arrival rate
         lambda_pred = predictor.predict(workload)
 
-        # Step 2: Construct state
-        state = agent.build_state(lambda_pred)
+        # Step 3: Build state
+        state = agent.build_state(lambda_pred, memory, P_cold)
 
-        # Step 3: Choose action
+        # Step 4: Choose action
         action = agent.select_action(state)
 
-        # Step 4: Apply action
-        latency, cost, energy = simulate_environment(action)
+        # Step 5: Simulate system
+        latency, cost, energy, P_cold, memory = simulate_environment(action, lambda_pred)
 
-        # Step 5: Compute reward
-        reward = compute_reward(latency, cost, energy)
+        # Step 6: Compute reward
+        reward = compute_reward(latency, cost, energy, W1, W2, W3)
 
-        # Step 6: Update RL agent
-        agent.update(state, action, reward)
+        total_reward += reward
+
+        print(f"Step {t}")
+        print(f"  Lambda: {lambda_pred:.3f}")
+        print(f"  Action: {action}")
+        print(f"  Latency: {latency:.2f}")
+        print(f"  Cost: {cost:.2f}")
+        print(f"  Energy: {energy:.2f}")
+        print(f"  Reward: {reward:.2f}\n")
+
+    print("✅ Simulation Complete")
+    print(f"Total Reward: {total_reward:.2f}")
+
 
 if __name__ == "__main__":
     main()
