@@ -1,0 +1,124 @@
+% \documentclass[twoside, 11pt]{thesisCLS} 
+% \input{packages.tex}
+
+% %%%%%%%%%% INSERT YOUR DETAILS %%%%%%%%%%%%%%
+% \newcommand{\projectTitle}{INSERT PROJECT TITLE HERE} %\\[1ex] to break line
+% \newcommand{\studentName}{INSERT YOUR NAME HERE}
+% \newcommand{\studentRoll}{ROLL NUMBER}
+% \newcommand{\supervisorName}{INSERT SUPERVISOR NAME}
+% \newcommand{\degreeName}{Master of Computer Applications}
+% \newcommand{\degreeSpecialization}{Computer Applications}
+% \newcommand{\semester}{3rd} % Insert your details
+% \newcommand{\courseDetails}{CA649 Project Work} % Insert your details
+% \tolerance=1
+% \emergencystretch=\maxdimen
+% \hyphenpenalty=10000
+% \hbadness=10000 
+% %%% document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{document}
+
+% \pagenumbering{roman} % titlepage does not get a number - that's odd, but good.
+% %% Header Pages
+% \ifpdf \pdfbookmark[1]{Title}{label:title}\fi \input{titlepage.tex} 
+% \newpage \ifpdf \pdfbookmark[1]{Certificate}{label:certificate}\fi \input{certificate.tex}
+% \newpage \ifpdf \pdfbookmark[1]{Abstract}{label:abstract}\fi \input{abstract.tex}
+% \newpage \ifpdf \pdfbookmark[1]{Acknowledgments}{label:acknowledgments}\fi \input{acknowledge.tex}
+% \ifpdf\pdfbookmark[1]{Table of Contents}{label:toc}\fi \tableofcontents
+% \addcontentsline{toc}{chapter}{\listfigurename}
+% \ifpdf\pdfbookmark[1]{List of Figures}{label:lof}\fi \listoffigures
+% \addcontentsline{toc}{chapter}{\listtablename}
+% \ifpdf\pdfbookmark[1]{List of Tables}{label:lot}\fi \listoftables
+% %% Main Chapters
+% \newpage \pagenumbering{arabic}
+% \pagestyle{plain}
+% \input{ch1.tex}
+% \input{ch2.tex}
+% \input{ch3.tex}
+% \input{ch4.tex}
+% \input{ch5.tex}
+% %% Bibliography
+% \addcontentsline{toc}{chapter}{\bibname}              % add Bibliography to TOC
+% \bibliographystyle{IEEEtranN}
+% \bibliography{references}
+% \end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[oneside, 11pt,table, xcdraw]{thesisCLS} 
+\input{packages.tex}
+\clearpage
+
+%%%%%%%%%% INSERT YOUR DETAILS %%%%%%%%%%%%%%
+\newcommand{\projectTitle}{INSERT PROJECT TITLE HERE} %\\[1ex] to break line
+\newcommand{\studentName}{INSERT YOUR NAME HERE}
+\newcommand{\studentRoll}{ROLL NUMBER}
+\newcommand{\supervisorName}{INSERT SUPERVISOR NAME}
+\newcommand{\degreeName}{Master of Computer Applications}
+\newcommand{\degreeSpecialization}{Computer Applications}
+\newcommand{\semester}{4th} % Insert your details
+\newcommand{\courseDetails}{CA650 Project Work} % Insert your details
+\tolerance=1
+\emergencystretch=\maxdimen
+\hyphenpenalty=10000
+\hbadness=10000 
+%%% document %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\pagenumbering{roman} % titlepage does not get a number - that's odd, but good.
+%% Header Pages
+\ifpdf \pdfbookmark[1]{Title}{label:title}\fi \input{titlepage.tex} 
+\clearpage
+\newpage \ifpdf \pdfbookmark[1]{Certificate}{label:certificate}\fi \input{certificate.tex}
+\clearpage
+\newpage \ifpdf \pdfbookmark[1]{Abstract}{label:abstract}\fi \input{abstract.tex}
+\clearpage
+\newpage \ifpdf \pdfbookmark[1]{Acknowledgments}{label:acknowledgments}\fi \input{acknowledge.tex}
+\clearpage
+\ifpdf\pdfbookmark[1]{Table of Contents}{label:toc}\fi \tableofcontents
+\addcontentsline{toc}{chapter}{\listfigurename}
+\ifpdf\pdfbookmark[1]{List of Figures}{label:lof}\fi \listoffigures
+\addcontentsline{toc}{chapter}{\listtablename}
+\ifpdf\pdfbookmark[1]{List of Tables}{label:lot}\fi \listoftables
+%% Main Chapters
+\newpage \pagenumbering{arabic}
+\pagestyle{plain}
+\clearpage
+\clearpage
+\input{ch1.tex}
+\clearpage
+\clearpage
+\clearpage
+\clearpage
+\clearpage
+\input{ch2.tex}
+\clearpage
+\clearpage
+\clearpage
+\clearpage
+\clearpage
+\input{ch3.tex}
+\clearpage
+\clearpage
+\clearpage
+\clearpage
+\clearpage
+\input{ch4.tex}
+\clearpage
+\clearpage
+\clearpage
+\clearpage
+\clearpage
+\input{ch5.tex}
+\clearpage
+\clearpage
+\clearpage
+%% Bibliography
+\addcontentsline{toc}{chapter}{\bibname}              % add Bibliography to TOC
+\bibliographystyle{IEEEtranN}
+\bibliography{references}
+
+%%%%% Appendices start %%%%%%%%%%%%%%%%
+\appendix
+\input{Appendix}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

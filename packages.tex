@@ -1,0 +1,131 @@
+% openright forces to start new chapter on right page in twoside environment
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% To Obtain ARIAL FONT
+%\renewcommand{\rmdefault}{phv} % Arial
+%\renewcommand{\sfdefault}{phv} % Arial
+
+% A
+\usepackage[titletoc]{appendix}
+%\usepackage[ruled,vlined,linesnumbered,resetcount,algochapter]{algorithm2e}
+%\usepackage{apacite}
+\usepackage[chapter]{algorithm}
+\usepackage{algorithmic}
+\renewcommand{\algorithmiccomment}[1]{/* #1 */}
+%\usepackage{algpseudocode}
+\usepackage{amsmath,amssymb,array}
+
+\newcounter{magicrownumbers}
+\newcommand\rownumber{\stepcounter{magicrownumbers}\arabic{magicrownumbers}}
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+% B
+\usepackage{booktabs}
+\usepackage{breqn}
+\usepackage{bm}
+
+% C
+\usepackage{cases}
+\usepackage{changepage}
+\usepackage{cite}
+
+
+% D
+\usepackage{dblfloatfix}
+
+% E
+\usepackage{enumitem}
+\usepackage{ragged2e}
+% F
+\usepackage{footnote}
+\usepackage{float}
+\usepackage[T1]{fontenc}        % euro quality fonts [T1] (togeth. w/ textcomp)
+
+
+% G
+\usepackage{graphicx}
+
+\graphicspath{{Chapters/Figures/}}
+\usepackage{epstopdf}			% Converts eps into pdf (must be included after graphicx)
+\usepackage[inner=1.25in,outer=1.0in, top=1.0in, bottom=1.0in]{geometry} % NIT Thesis Format inner and outer set different left and right space for odd and even pages of twosided document
+
+% H
+\usepackage{hhline}
+\usepackage[colorlinks = true,
+linkcolor = blue,
+urlcolor  = blue,
+citecolor = blue,
+anchorcolor = blue]{hyperref}
+% I
+%\usepackage[latin1]{inputenc}   % umlaute in input file
+\usepackage{hyperref}	% Dependency with inputenc package (must be included afterwards)
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	filecolor=black,      
+	urlcolor=black,
+	citecolor=black,
+	anchorcolor=black,
+}
+\usepackage{cleveref}			% Dependency with hyperref and must be loaded after it
+
+% L
+\usepackage{lscape}
+\usepackage{longtable}
+
+% M
+\usepackage{multirow,multicol,makecell}
+\usepackage{mathtools}
+\usepackage{miama}
+%\usepackage[T1]{fontenc}
+
+\usepackage[numbers]{natbib}
+
+
+% P
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+
+% S
+\usepackage{setspace}           % doublespacing
+\renewcommand{\baselinestretch}{1.5}
+%\usepackage{subfigure}
+\usepackage{seqsplit}
+\usepackage{subfig}
+
+% T
+\usepackage{tabularx}
+\usepackage{textcomp}  % additional symbols (there are more packages)
+\usepackage{tikz}
+%\usepackage[table,xcdraw]{xcolor}
+
+% U
+\usepackage{upgreek}			% Supports special greek symbols
+\usepackage{url}
+
+% W
+\usepackage{wrapfig}
+
+% X
+\usepackage[all]{xy}            % creating figures within latex
+\usepackage{xfrac}
+
+
+%% TOC Depth Definition
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	Additional Library or package setup		%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% style and finetuning %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{plain}               % pagestyle: headings, empty, plain
+
+\raggedbottom
