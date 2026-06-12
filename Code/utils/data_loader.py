@@ -9,4 +9,3 @@ def get_sequence(data, t, window=10):
     if t < window:
         return data[:window]
     return data[t-window:t]
-``
