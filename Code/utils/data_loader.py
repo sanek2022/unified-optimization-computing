@@ -1,7 +1,12 @@
-import numpy as np
+import pandas as pd
 
-def get_workload_data(t, window=10):
-    """
-    Generate synthetic workload (can replace with real logs)
-    """
-    return np.sin(np.linspace(0, t, window)) + np.random.rand(window) * 0.1
+def load_dataset(path="data/workload.csv"):
+    df = pd.read_csv(path)
+    return df["arrival_rate"].values
+
+
+def get_sequence(data, t, window=10):
+    if t < window:
+        return data[:window]
+    return data[t-window:t]
+``

@@ -2,21 +2,29 @@ import torch
 import torch.nn as nn
 
 class WorkloadPredictor(nn.Module):
-    def __init__(self, input_dim=1):
+    def __init__(self, input_dim=1, d_model=64, nhead=4):
         super().__init__()
 
-        self.model = nn.Transformer(
-            d_model=32,
-            nhead=4,
-            num_encoder_layers=2
+        self.embedding = nn.Linear(input_dim, d_model)
+
+        self.transformer = nn.TransformerEncoder(
+            nn.TransformerEncoderLayer(
+                d_model=d_model,
+                nhead=nhead,
+                batch_first=True
+            ),
+            num_layers=2
         )
 
-        self.fc = nn.Linear(32, 1)
+        self.fc = nn.Linear(d_model, 1)
 
     def forward(self, x):
-        out = self.model(x, x)
-        return self.fc(out[-1])
+        x = self.embedding(x)
+        x = self.transformer(x)
+        return self.fc(x[:, -1, :])
 
     def predict(self, x):
-        x = torch.tensor(x, dtype=torch.float32).unsqueeze(1)
-        return self.forward(x).item()
+        self.eval()
+        with torch.no_grad():
+            x = torch.tensor(x, dtype=torch.float32).unsqueeze(0).unsqueeze(-1)
+            return self.forward(x).item()
